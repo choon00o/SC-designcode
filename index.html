@@ -110,6 +110,12 @@
         font-size: var(--font-size-base);
         margin: 0;
       }
+
+      @media (min-width: 600px) {
+        .card-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
     </style>
   </head>
   <body>
@@ -121,7 +127,7 @@
     <div class="exercise">
       <div class="exercise-label">Exercise 1 — Edit with AI</div>
       <div class="card">
-        <h1>Hello, I'm Alex</h1>
+        <h1>Hello, I'm Kaitlin</h1>
         <p>I love exploring new places. My dream destination is Japan — the food, the temples, the trains.</p>
         <button class="button">Let's go</button>
       </div>
