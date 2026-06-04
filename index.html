@@ -11,7 +11,7 @@
         --color-primary-hover: #0557b0;
         --color-text: #444;
         --color-heading: #0770e3;
-        --color-bg: #f0f4ff;
+        --color-bg: linear-gradient(135deg, #bbf7d0, #fbcfe8);
         --color-card-bg: white;
         --spacing-sm: 8px;
         --spacing-md: 16px;
@@ -70,7 +70,10 @@
 
       .button {
         display: inline-block;
-        background: var(--color-primary);
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(120deg, #0770e3, #38bdf8, #0770e3);
+        background-size: 220% 220%;
         color: white;
         padding: 14px var(--spacing-lg);
         border-radius: var(--radius-md);
@@ -79,10 +82,45 @@
         text-decoration: none;
         cursor: pointer;
         border: none;
+        box-shadow: 0 8px 20px rgba(7, 112, 227, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        animation: button-gradient 4s ease infinite;
+      }
+
+      .button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(110deg, rgba(255, 255, 255, 0) 28%, rgba(255, 255, 255, 0.55) 50%, rgba(255, 255, 255, 0) 72%);
+        transform: translateX(-130%);
+        animation: button-wave 2.2s linear infinite;
       }
 
       .button:hover {
-        background: var(--color-primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 26px rgba(7, 112, 227, 0.45);
+      }
+
+      @keyframes button-gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes button-wave {
+        0% {
+          transform: translateX(-130%);
+        }
+        100% {
+          transform: translateX(130%);
+        }
       }
 
       /* Exercise 2 */
@@ -97,6 +135,20 @@
         padding: var(--spacing-md) var(--spacing-lg);
         border-radius: var(--radius-lg);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .destination-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+      }
+
+      .destination-card img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-sm);
       }
 
       .destination-card h2 {
@@ -121,9 +173,9 @@
     <div class="exercise">
       <div class="exercise-label">Exercise 1 — Edit with AI</div>
       <div class="card">
-        <h1>Hello, I'm Alex</h1>
+        <h1>Hello, I'm Stephanie</h1>
         <p>I love exploring new places. My dream destination is Japan — the food, the temples, the trains.</p>
-        <button class="button">Let's go</button>
+        <button class="button">Let's go 🤍</button>
       </div>
     </div>
 
@@ -136,16 +188,24 @@
       <div class="exercise-label">Exercise 2 — Components</div>
       <div class="card-grid">
         <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=800&q=80" alt="Mount Fuji in Japan" />
           <h2>Japan</h2>
           <p>Temples, trains, and incredible food.</p>
         </div>
         <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=800&q=80" alt="Iceland landscape with mountains and water" />
           <h2>Iceland</h2>
           <p>Waterfalls, geysers, and northern lights.</p>
         </div>
         <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80" alt="Thailand beach with boats" />
           <h2>Thailand</h2>
           <p>Beaches, street food, and warm weather.</p>
+        </div>
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80" alt="Singapore skyline at dusk" />
+          <h2>Singapore</h2>
+          <p>Gardens, skyline views, and amazing hawker food.</p>
         </div>
       </div>
     </div>
