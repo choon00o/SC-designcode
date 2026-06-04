@@ -7,11 +7,11 @@
     <style>
       /* Exercise 3: Design Tokens — change a value here and see everything update */
       :root {
-        --color-primary: #ff6600;
-        --color-primary-hover: #0557b0;
+        --color-primary: #e07000;
+        --color-primary-hover: #b35a00;
         --color-text: #444;
-        --color-heading: #0770e3;
-        --color-bg: #fdf6ec;
+        --color-heading: #e07000;
+        --color-bg: #fff8f0;
         --color-card-bg: white;
         --spacing-sm: 8px;
         --spacing-md: 16px;
@@ -88,8 +88,14 @@
       /* Exercise 2 */
       .card-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: 1fr;
         gap: var(--spacing-md);
+      }
+
+      @media (min-width: 480px) {
+        .card-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
 
       .destination-card {
@@ -110,12 +116,6 @@
         font-size: var(--font-size-base);
         margin: 0;
       }
-
-      @media (min-width: 600px) {
-        .card-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
     </style>
   </head>
   <body>
@@ -127,7 +127,7 @@
     <div class="exercise">
       <div class="exercise-label">Exercise 1 — Edit with AI</div>
       <div class="card">
-        <h1>Hello, I'm Jessica</h1>
+        <h1>Hello, I'm Mathilda</h1>
         <p>I love exploring new places. My dream destination is Japan — the food, the temples, the trains.</p>
         <button class="button">Let's go</button>
       </div>
