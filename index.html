@@ -7,11 +7,11 @@
     <style>
       /* Exercise 3: Design Tokens — change a value here and see everything update */
       :root {
-        --color-primary: #0770e3;
+        --color-primary: #ff6600;
         --color-primary-hover: #0557b0;
         --color-text: #444;
-        --color-heading: #0770e3;
-        --color-bg: #f0f4ff;
+        --color-heading: #e07000;
+        --color-bg: #fff8f0;
         --color-card-bg: white;
         --spacing-sm: 8px;
         --spacing-md: 16px;
@@ -88,8 +88,14 @@
       /* Exercise 2 */
       .card-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: 1fr;
         gap: var(--spacing-md);
+      }
+
+      @media (min-width: 480px) {
+        .card-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
 
       .destination-card {
@@ -121,8 +127,8 @@
     <div class="exercise">
       <div class="exercise-label">Exercise 1 — Edit with AI</div>
       <div class="card">
-        <h1>Hello, I'm Alex</h1>
-        <p>I love exploring new places. My dream destination is Japan — the food, the temples, the trains.</p>
+        <h1>Hello, I'm Jo</h1>
+        <p>I love cycling and drinking pints. Best combo: a long ride followed by a cold one.</p>
         <button class="button">Let's go</button>
       </div>
     </div>
@@ -146,6 +152,10 @@
         <div class="destination-card">
           <h2>Thailand</h2>
           <p>Beaches, street food, and warm weather.</p>
+        </div>
+        <div class="destination-card">
+          <h2>Singapore</h2>
+          <p>Hawker food paradise.</p>
         </div>
       </div>
     </div>
